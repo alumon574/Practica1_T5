@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_Inbox">
+
+    <fragment
+        android:id="@+id/nav_Inbox"
+        android:name="com.example.practica1_t5.ui.Inbox.InboxFragment"
+        android:label="Inbox"
+        tools:layout="@layout/fragment_inbox" />
+
+    <fragment
+        android:id="@+id/nav_Outbox"
+        android:name="com.example.practica1_t5.ui.Outbox.OutboxFragment"
+        android:label="Outbox"
+        tools:layout="@layout/fragment_outbox" />
+
+    <fragment
+        android:id="@+id/nav_Trash"
+        android:name="com.example.practica1_t5.ui.Trash.TrashFragment"
+        android:label="Trash"
+        tools:layout="@layout/fragment_trash" />
+
+    <fragment
+        android:id="@+id/nav_spam"
+        android:name="com.example.practica1_t5.ui.Spam.SpamFragment"
+        android:label="Spam"
+        tools:layout="@layout/fragment_spam" />
+</navigation>
