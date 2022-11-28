@@ -2,6 +2,8 @@ package com.example.practica1_t5
 
 import android.os.Bundle
 import android.view.Menu
+import android.widget.ArrayAdapter
+import android.widget.Spinner
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.navigation.NavigationView
 import androidx.navigation.findNavController
@@ -37,7 +39,7 @@ class MainActivity : AppCompatActivity() {
         // menu should be considered as top level destinations.
         appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.nav_Inbox, R.id.nav_Outbox, R.id.nav_trash, R.id.nav_spam
+                R.id.nav_Inbox, R.id.nav_Outbox, R.id.nav_Trash, R.id.nav_spam
             ), drawerLayout
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
@@ -45,10 +47,19 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
+
+        val spinner = findViewById<Spinner>(R.id.spinner)
+        val spinnerResults = arrayOf("carladom@gmail.com","alu123@ieselcaminas.org","correocarla@gmail.es")
+
+        val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item,spinnerResults)
+        spinner.adapter = adapter
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         // Inflate the menu; this adds items to the action bar if it is present.
         menuInflater.inflate(R.menu.main, menu)
         return true
     }
+
+
 
     override fun onSupportNavigateUp(): Boolean {
         val navController = findNavController(R.id.nav_host_fragment_content_main)
